@@ -17,3 +17,18 @@ test("miINT8", async () => {
 		},
 	})
 })
+
+test("miINT8", async () => {
+	const buffer = await readFile("test/data/number.mat")
+	const obj = matread(buffer.buffer)
+	expect(obj.data).toEqual({
+			"A": [10],
+	})
+})
+test("miINT8", async () => {
+	const buffer = await readFile("test/data/char.mat")
+	const obj = matread(buffer.buffer)
+	expect(obj.data).toEqual({"char1":"helloworld","char2":[["h","e","l","l","o"],["w","o","r","l","d"]],"char3":"hello"})
+})
+
+
